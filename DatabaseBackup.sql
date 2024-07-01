@@ -2834,6 +2834,7 @@ BEGIN
         WHERE ([type] IN('D','I')
         OR ([type] = 'L' AND last_lsn < @CurrentDifferentialBaseLSN))
         AND is_damaged = 0
+        AND is_copy_only = 0
         AND [database_name] = @CurrentDatabaseName
       END
 
